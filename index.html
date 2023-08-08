@@ -26,6 +26,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Template BaiDuMap -->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=PSqxOg9yMBsxQy1uICbiBKavGXtVVwlf"></script>
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -324,7 +327,9 @@
                 <p>+198 1609 6093</p>
               </div>
 
-              <iframe src="https://api.map.baidu.com/map.rcp?&amp;src=9QBt7VHMvwhtGBOq5l6TLfG5eZstAARM&amp;v=2.0&amp;ak=9QBt7VHMvwhtGBOq5l6TLfG5eZstAARM&amp;center=121.89210507554525,30.901839974503126&amp;width=100%&amp;height=290" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <div id="mapContainer" style="border:0; width: 100%; height: 290px;">
+				  
+			  </div>
             </div>
 
           </div>
@@ -382,6 +387,18 @@
   </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <script>
+    // 初始化地图
+    var map = new BMap.Map("mapContainer");
+  
+    // 设置地图中心点和缩放级别
+    var point = new BMap.Point(121.89800,30.90780); // 替换为具体的经纬度
+    map.centerAndZoom(point, 16);
+  
+    // 添加缩放控件
+    map.addControl(new BMap.NavigationControl());
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
